@@ -79,34 +79,12 @@ export default function Home() {
     },
   ];
 
-  const projects = [
-    {
-      title: "نظام إدارة المكتبة",
-      description: "تطبيق ويب لإدارة المكتبات مع قاعدة بيانات متقدمة",
-      technologies: ["Python", "Django", "MySQL"],
-      icon: "📚",
-      color: "from-blue-400 to-blue-600",
-    },
-    {
-      title: "لعبة الثعبان",
-      description: "لعبة تفاعلية مع رسوميات جميلة وميكانيكا لعب متقدمة",
-      technologies: ["Python", "Pygame"],
-      icon: "🎮",
-      color: "from-green-400 to-green-600",
-    },
-    {
-      title: "موقع شخصي ديناميكي",
-      description: "موقع شخصي متجاوب مع تصميم حديث وتفاعلي",
-      technologies: ["React", "Tailwind CSS", "JavaScript"],
-      icon: "💻",
-      color: "from-purple-400 to-purple-600",
-    },
-  ];
+  const projects = [];
 
   const stats = [
-    { label: "سنوات التعليم", value: "3+", icon: "🎓" },
-    { label: "المشاريع المكتملة", value: "10+", icon: "✅" },
-    { label: "لغات البرمجة", value: "5+", icon: "💻" },
+    { label: "سنوات التعليم", value: "1+", icon: "🎓" },
+    { label: "المشاريع المكتملة", value: "5+", icon: "✅" },
+    { label: "لغات البرمجة", value: "2", icon: "💻" },
     { label: "التقييم العام", value: "5.0", icon: "⭐" },
   ];
 
@@ -122,9 +100,7 @@ export default function Home() {
             <a href="#about" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
               عني
             </a>
-            <a href="#projects" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-              المشاريع
-            </a>
+
             <a href="#skills" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
               المهارات
             </a>
@@ -279,51 +255,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
-        <div className="container mx-auto px-4">
-          <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-12 text-center">المشاريع</h2>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden bg-white border-blue-100/50 hover:shadow-xl transition-all duration-300 hover:scale-105 group"
-              >
-                {/* Project Header */}
-                <div className={`bg-gradient-to-br ${project.color} p-6 text-white`}>
-                  <div className="text-4xl mb-2">{project.icon}</div>
-                  <h3 className="font-display font-bold text-xl">{project.title}</h3>
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6">
-                  <p className="text-gray-700 mb-4">{project.description}</p>
-                  
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* View Button */}
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium rounded-lg py-2 transition-all duration-300 group-hover:gap-2">
-                    عرض المشروع
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Skills Section */}
       <section id="skills" className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -338,7 +269,7 @@ export default function Home() {
                   <h3 className="font-display font-bold text-xl text-gray-900">لغات البرمجة</h3>
                 </div>
                 <div className="space-y-4">
-                  {["Python", "JavaScript", "HTML & CSS", "SQL"].map((skill) => (
+                  {["Python", "C"].map((skill) => (
                     <div key={skill}>
                       <div className="flex justify-between mb-2">
                         <span className="text-gray-700 font-medium">{skill}</span>
