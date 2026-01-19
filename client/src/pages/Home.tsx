@@ -121,21 +121,19 @@ export default function Home() {
           >
             {/* Profile Image */}
             <div className="flex-1 flex justify-center">
-              <div className="relative w-48 h-48 md:w-64 md:h-64">
-                <div
-                  className="absolute inset-0 rounded-full opacity-50"
-                  style={{
-                    backgroundImage: "url('/images/profile-decoration.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
+              <div className="relative w-48 h-48 md:w-64 md:h-64 group">
+                {/* Decorative background circle */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 shadow-2xl" />
+                
+                {/* Profile image */}
+                <img
+                  src="/images/profile.jpg"
+                  alt="محمد ناصر"
+                  className="absolute inset-0 w-full h-full rounded-full object-cover shadow-2xl transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full shadow-2xl flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <div className="font-display font-bold text-4xl mb-2">محمد</div>
-                    <div className="text-sm text-blue-100">طالب تقنية حاسوب</div>
-                  </div>
-                </div>
+                
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 rounded-full bg-blue-600/0 group-hover:bg-blue-600/20 transition-all duration-300" />
               </div>
             </div>
 
