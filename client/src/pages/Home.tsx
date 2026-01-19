@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, Github, Facebook, Instagram, Gamepad2, ExternalLink, Star } from "lucide-react";
+import { Mail, Github, Facebook, Instagram, Gamepad2, ExternalLink, Star, Download, ArrowRight, Code, Zap, Users } from "lucide-react";
 import { useState, useEffect } from "react";
 
 /**
@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
+  const [activeSkillTab, setActiveSkillTab] = useState("programming");
 
   useEffect(() => {
     setIsVisible(true);
@@ -78,6 +79,37 @@ export default function Home() {
     },
   ];
 
+  const projects = [
+    {
+      title: "نظام إدارة المكتبة",
+      description: "تطبيق ويب لإدارة المكتبات مع قاعدة بيانات متقدمة",
+      technologies: ["Python", "Django", "MySQL"],
+      icon: "📚",
+      color: "from-blue-400 to-blue-600",
+    },
+    {
+      title: "لعبة الثعبان",
+      description: "لعبة تفاعلية مع رسوميات جميلة وميكانيكا لعب متقدمة",
+      technologies: ["Python", "Pygame"],
+      icon: "🎮",
+      color: "from-green-400 to-green-600",
+    },
+    {
+      title: "موقع شخصي ديناميكي",
+      description: "موقع شخصي متجاوب مع تصميم حديث وتفاعلي",
+      technologies: ["React", "Tailwind CSS", "JavaScript"],
+      icon: "💻",
+      color: "from-purple-400 to-purple-600",
+    },
+  ];
+
+  const stats = [
+    { label: "سنوات التعليم", value: "3+", icon: "🎓" },
+    { label: "المشاريع المكتملة", value: "10+", icon: "✅" },
+    { label: "لغات البرمجة", value: "5+", icon: "💻" },
+    { label: "التقييم العام", value: "5.0", icon: "⭐" },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
       {/* Navigation Header */}
@@ -89,6 +121,9 @@ export default function Home() {
           <div className="flex gap-6">
             <a href="#about" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
               عني
+            </a>
+            <a href="#projects" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+              المشاريع
             </a>
             <a href="#skills" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
               المهارات
@@ -162,11 +197,27 @@ export default function Home() {
                     variant="outline"
                     className="border-blue-200 text-blue-600 hover:bg-blue-50 font-medium rounded-lg px-8 py-3 transition-all duration-300"
                   >
+                    <Download className="w-4 h-4 ml-2" />
                     تحميل السيرة الذاتية
                   </Button>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 bg-white border-y border-blue-100/50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl mb-2">{stat.icon}</div>
+                <div className="font-display font-bold text-2xl text-blue-600">{stat.value}</div>
+                <p className="text-sm text-gray-600">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -228,56 +279,111 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+        <div className="container mx-auto px-4">
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-12 text-center">المشاريع</h2>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {projects.map((project, index) => (
+              <Card
+                key={index}
+                className="overflow-hidden bg-white border-blue-100/50 hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              >
+                {/* Project Header */}
+                <div className={`bg-gradient-to-br ${project.color} p-6 text-white`}>
+                  <div className="text-4xl mb-2">{project.icon}</div>
+                  <h3 className="font-display font-bold text-xl">{project.title}</h3>
+                </div>
+
+                {/* Project Content */}
+                <div className="p-6">
+                  <p className="text-gray-700 mb-4">{project.description}</p>
+                  
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* View Button */}
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium rounded-lg py-2 transition-all duration-300 group-hover:gap-2">
+                    عرض المشروع
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+      <section id="skills" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-12 text-center">المهارات</h2>
 
           <div className="max-w-4xl mx-auto">
-            <div
-              className="absolute inset-0 opacity-20 pointer-events-none"
-              style={{
-                backgroundImage: "url('/images/skills-background.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
-
             <div className="relative grid md:grid-cols-2 gap-8">
               {/* Programming Skills */}
-              <Card className="p-8 bg-white border-blue-100/50 hover:shadow-lg transition-all duration-300">
-                <h3 className="font-display font-bold text-xl text-gray-900 mb-6">لغات البرمجة</h3>
+              <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-center gap-3 mb-6">
+                  <Code className="w-6 h-6 text-blue-600" />
+                  <h3 className="font-display font-bold text-xl text-gray-900">لغات البرمجة</h3>
+                </div>
                 <div className="space-y-4">
                   {["Python", "JavaScript", "HTML & CSS", "SQL"].map((skill) => (
-                    <div key={skill} className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" />
-                      <span className="text-gray-700 font-medium">{skill}</span>
+                    <div key={skill}>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-gray-700 font-medium">{skill}</span>
+                        <span className="text-blue-600 font-bold">85%</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div className="bg-gradient-to-r from-blue-600 to-blue-400 h-2 rounded-full" style={{ width: "85%" }} />
+                      </div>
                     </div>
                   ))}
                 </div>
               </Card>
 
               {/* Technical Skills */}
-              <Card className="p-8 bg-white border-blue-100/50 hover:shadow-lg transition-all duration-300">
-                <h3 className="font-display font-bold text-xl text-gray-900 mb-6">المهارات التقنية</h3>
+              <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-center gap-3 mb-6">
+                  <Zap className="w-6 h-6 text-blue-600" />
+                  <h3 className="font-display font-bold text-xl text-gray-900">المهارات التقنية</h3>
+                </div>
                 <div className="space-y-4">
                   {["تطوير الويب", "قواعد البيانات", "أنظمة التشغيل", "الشبكات"].map((skill) => (
-                    <div key={skill} className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" />
-                      <span className="text-gray-700 font-medium">{skill}</span>
+                    <div key={skill}>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-gray-700 font-medium">{skill}</span>
+                        <span className="text-blue-600 font-bold">80%</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div className="bg-gradient-to-r from-blue-600 to-blue-400 h-2 rounded-full" style={{ width: "80%" }} />
+                      </div>
                     </div>
                   ))}
                 </div>
               </Card>
 
               {/* Soft Skills */}
-              <Card className="p-8 bg-white border-blue-100/50 hover:shadow-lg transition-all duration-300 md:col-span-2">
-                <h3 className="font-display font-bold text-xl text-gray-900 mb-6">المهارات الشخصية</h3>
+              <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 hover:shadow-lg transition-all duration-300 md:col-span-2">
+                <div className="flex items-center gap-3 mb-6">
+                  <Users className="w-6 h-6 text-blue-600" />
+                  <h3 className="font-display font-bold text-xl text-gray-900">المهارات الشخصية</h3>
+                </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {["التواصل", "العمل الجماعي", "حل المشاكل", "الإبداع"].map((skill) => (
                     <div
                       key={skill}
-                      className="p-4 bg-gradient-to-br from-blue-50 to-white border border-blue-100/50 rounded-lg text-center hover:shadow-md transition-all duration-300"
+                      className="p-4 bg-white border border-blue-100/50 rounded-lg text-center hover:shadow-md transition-all duration-300"
                     >
                       <p className="text-gray-700 font-medium text-sm">{skill}</p>
                     </div>
@@ -290,7 +396,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-white">
+      <section id="testimonials" className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-12 text-center">شهادات التقدير</h2>
 
@@ -301,7 +407,7 @@ export default function Home() {
                   key={index}
                   className="group"
                 >
-                  <Card className="p-6 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 hover:shadow-xl transition-all duration-300 hover:scale-105 h-full flex flex-col">
+                  <Card className="p-6 bg-white border-blue-100/50 hover:shadow-xl transition-all duration-300 hover:scale-105 h-full flex flex-col">
                     {/* Stars */}
                     <div className="flex gap-1 mb-4">
                       {Array.from({ length: testimonial.rating }).map((_, i) => (
@@ -329,15 +435,15 @@ export default function Home() {
 
             {/* Testimonials Summary */}
             <div className="grid md:grid-cols-3 gap-6">
-              <Card className="p-6 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
+              <Card className="p-6 bg-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
                 <div className="text-3xl font-display font-bold text-blue-600 mb-2">5.0</div>
                 <p className="text-gray-700 text-sm">متوسط التقييم</p>
               </Card>
-              <Card className="p-6 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
+              <Card className="p-6 bg-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
                 <div className="text-3xl font-display font-bold text-blue-600 mb-2">5</div>
                 <p className="text-gray-700 text-sm">عدد التوصيات</p>
               </Card>
-              <Card className="p-6 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
+              <Card className="p-6 bg-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
                 <div className="text-3xl font-display font-bold text-blue-600 mb-2">100%</div>
                 <p className="text-gray-700 text-sm">التقييمات الإيجابية</p>
               </Card>
@@ -347,12 +453,12 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+      <section id="contact" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-12 text-center">تواصل معي</h2>
 
           <div className="max-w-2xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               {socialLinks.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -373,7 +479,7 @@ export default function Home() {
             </div>
 
             {/* Email Form */}
-            <Card className="mt-12 p-8 bg-white border-blue-100/50">
+            <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-blue-100/50">
               <h3 className="font-display font-bold text-xl text-gray-900 mb-6">أرسل لي رسالة</h3>
               <form className="space-y-4">
                 <div>
