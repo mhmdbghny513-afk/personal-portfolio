@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, Github, Facebook, Instagram, Gamepad2, ExternalLink } from "lucide-react";
+import { Mail, Github, Facebook, Instagram, Gamepad2, ExternalLink, Star } from "lucide-react";
 import { useState, useEffect } from "react";
 
 /**
@@ -45,6 +45,39 @@ export default function Home() {
     },
   ];
 
+  const testimonials = [
+    {
+      name: "د. أحمد الشريف",
+      role: "أستاذ البرمجة",
+      content: "محمد طالب متميز يتمتع بفهم عميق لمبادئ البرمجة. يظهر التزاماً قوياً في دراسته وقدرة على حل المشاكل المعقدة بكفاءة.",
+      rating: 5,
+    },
+    {
+      name: "فاطمة محمود",
+      role: "زميلة في الدراسة",
+      content: "محمد زميل رائع يتعاون بفعالية في المشاريع الجماعية. يتمتع بروح إيجابية وقدرة على التواصل بشكل واضح مع الفريق.",
+      rating: 5,
+    },
+    {
+      name: "أ. سارة علي",
+      role: "مدرسة قواعد البيانات",
+      content: "محمد يظهر فضول علمي كبير وحماساً للتعلم. تطبيقاته العملية لمفاهيم قواعد البيانات كانت مثيرة للإعجاب وتستحق الثناء.",
+      rating: 5,
+    },
+    {
+      name: "علي محمد",
+      role: "زميل في المشروع",
+      content: "العمل مع محمد كان تجربة ممتازة. يتمتع بمهارات تقنية قوية وقدرة على القيادة والتنسيق بين أعضاء الفريق.",
+      rating: 5,
+    },
+    {
+      name: "د. محمود حسن",
+      role: "مشرف المشاريع",
+      content: "محمد يتمتع بالمثابرة والإصرار على تحقيق الأهداف. مشاريعه تتسم بالجودة العالية والاهتمام بالتفاصيل.",
+      rating: 5,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
       {/* Navigation Header */}
@@ -59,6 +92,9 @@ export default function Home() {
             </a>
             <a href="#skills" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
               المهارات
+            </a>
+            <a href="#testimonials" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+              التوصيات
             </a>
             <a href="#contact" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
               التواصل
@@ -255,8 +291,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-12 text-center">شهادات التقدير</h2>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="group"
+                >
+                  <Card className="p-6 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 hover:shadow-xl transition-all duration-300 hover:scale-105 h-full flex flex-col">
+                    {/* Stars */}
+                    <div className="flex gap-1 mb-4">
+                      {Array.from({ length: testimonial.rating }).map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                        />
+                      ))}
+                    </div>
+
+                    {/* Content */}
+                    <p className="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
+                      "{testimonial.content}"
+                    </p>
+
+                    {/* Author */}
+                    <div className="border-t border-blue-100/50 pt-4">
+                      <p className="font-display font-bold text-gray-900">{testimonial.name}</p>
+                      <p className="text-blue-600 text-sm font-medium">{testimonial.role}</p>
+                    </div>
+                  </Card>
+                </div>
+              ))}
+            </div>
+
+            {/* Testimonials Summary */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="p-6 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl font-display font-bold text-blue-600 mb-2">5.0</div>
+                <p className="text-gray-700 text-sm">متوسط التقييم</p>
+              </Card>
+              <Card className="p-6 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl font-display font-bold text-blue-600 mb-2">5</div>
+                <p className="text-gray-700 text-sm">عدد التوصيات</p>
+              </Card>
+              <Card className="p-6 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl font-display font-bold text-blue-600 mb-2">100%</div>
+                <p className="text-gray-700 text-sm">التقييمات الإيجابية</p>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-12 text-center">تواصل معي</h2>
 
@@ -282,7 +375,7 @@ export default function Home() {
             </div>
 
             {/* Email Form */}
-            <Card className="mt-12 p-8 bg-gradient-to-br from-blue-50 to-white border-blue-100/50">
+            <Card className="mt-12 p-8 bg-white border-blue-100/50">
               <h3 className="font-display font-bold text-xl text-gray-900 mb-6">أرسل لي رسالة</h3>
               <form className="space-y-4">
                 <div>
