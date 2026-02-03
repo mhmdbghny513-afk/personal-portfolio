@@ -1,0 +1,16 @@
+[2026-02-03T09:52:52.698Z] Starting dev server with command: pnpm run dev
+[2026-02-03T09:52:53.466Z] 
+[2026-02-03T09:52:53.467Z] > personal-portfolio@1.0.0 dev /home/ubuntu/personal-portfolio
+[2026-02-03T09:52:53.467Z] > vite --host
+[2026-02-03T09:52:53.467Z] 
+[2026-02-03T09:52:54.453Z] 
+[2026-02-03T09:52:54.454Z] VITE v7.1.9  ready in 953 ms
+[2026-02-03T09:52:54.454Z] 
+[2026-02-03T09:52:54.454Z] ➜  Local:   http://localhost:3000/
+[2026-02-03T09:52:54.455Z] ➜  Network: http://169.254.0.21:3000/
+[2026-02-03T10:27:37.298Z] 5:27:37 AM [vite] vite.config.ts changed, restarting server...
+[2026-02-03T10:27:37.299Z] 5:27:37 AM [vite] (client) page reload index.html
+[2026-02-03T10:27:37.309Z] 5:27:37 AM [vite] server restarted.
+[2026-02-03T10:27:37.310Z] 
+[2026-02-03T10:27:37.310Z] ➜  Local:   http://localhost:5173/
+[2026-02-03T10:27:37.310Z] ➜  Network: http://169.254.0.21:5173/
