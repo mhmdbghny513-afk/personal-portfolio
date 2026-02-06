@@ -3,13 +3,6 @@ import { Card } from "@/components/ui/card";
 import { Mail, Github, Facebook, Instagram, Gamepad2, ExternalLink, Star, Download, ArrowRight, Code, Zap, Users } from "lucide-react";
 import { useState, useEffect } from "react";
 
-/**
- * Design Philosophy: Modern Dynamic
- * - Soft blue gradients with subtle geometric shapes
- * - Smooth animations and transitions
- * - Interactive card hover effects
- * - Professional yet welcoming aesthetic
- */
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -90,7 +83,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
-      {/* Navigation Header */}
+
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-blue-100/50">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="font-display font-bold text-2xl bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
@@ -130,25 +123,20 @@ export default function Home() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            {/* Profile Image */}
             <div className="flex-1 flex justify-center">
               <div className="relative w-48 h-48 md:w-64 md:h-64 group">
-                {/* Decorative background circle */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 shadow-2xl" />
-                
-                {/* Profile image */}
                 <img
                   src="/images/profile.jpg"
                   alt="محمد ناصر"
                   className="absolute inset-0 w-full h-full rounded-full object-cover shadow-2xl transition-transform duration-300 group-hover:scale-105"
                 />
                 
-                {/* Overlay on hover */}
                 <div className="absolute inset-0 rounded-full bg-blue-600/0 group-hover:bg-blue-600/20 transition-all duration-300" />
               </div>
             </div>
 
-            {/* Hero Content */}
+  
             <div className="flex-1">
               <div className="space-y-6">
                 <div>
@@ -183,7 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
+
       <section className="py-12 bg-white border-y border-blue-100/50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -198,7 +186,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+
       <section id="about" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-12 text-center">عني</h2>
@@ -255,7 +243,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
+
       <section id="skills" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-12 text-center">المهارات</h2>
@@ -326,7 +314,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+
       <section id="testimonials" className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-12 text-center">شهادات التقدير</h2>
@@ -383,7 +371,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
+
       <section id="contact" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-12 text-center">تواصل معي</h2>
