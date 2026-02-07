@@ -107,7 +107,7 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Hero Section */}
+      }
       <section className="relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-40"
@@ -250,7 +250,7 @@ export default function Home() {
 
           <div className="max-w-4xl mx-auto">
             <div className="relative grid md:grid-cols-2 gap-8">
-              {/* Programming Skills */}
+              }
               <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 hover:shadow-lg transition-all duration-300">
                 <div className="flex items-center gap-3 mb-6">
                   <Code className="w-6 h-6 text-blue-600" />
@@ -271,7 +271,7 @@ export default function Home() {
                 </div>
               </Card>
 
-              {/* Technical Skills */}
+              }
               <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 hover:shadow-lg transition-all duration-300">
                 <div className="flex items-center gap-3 mb-6">
                   <Zap className="w-6 h-6 text-blue-600" />
@@ -292,7 +292,7 @@ export default function Home() {
                 </div>
               </Card>
 
-              {/* Soft Skills */}
+              }
               <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-blue-100/50 hover:shadow-lg transition-all duration-300 md:col-span-2">
                 <div className="flex items-center gap-3 mb-6">
                   <Users className="w-6 h-6 text-blue-600" />
@@ -327,7 +327,7 @@ export default function Home() {
                   className="group"
                 >
                   <Card className="p-6 bg-white border-blue-100/50 hover:shadow-xl transition-all duration-300 hover:scale-105 h-full flex flex-col">
-                    {/* Stars */}
+                    }
                     <div className="flex gap-1 mb-4">
                       {Array.from({ length: testimonial.rating }).map((_, i) => (
                         <Star
@@ -337,12 +337,12 @@ export default function Home() {
                       ))}
                     </div>
 
-                    {/* Content */}
+                    }
                     <p className="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
                       "{testimonial.content}"
                     </p>
 
-                    {/* Author */}
+                    }
                     <div className="border-t border-blue-100/50 pt-4">
                       <p className="font-display font-bold text-gray-900">{testimonial.name}</p>
                       <p className="text-blue-600 text-sm font-medium">{testimonial.role}</p>
@@ -352,7 +352,7 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Testimonials Summary */}
+            }
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="p-6 bg-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
                 <div className="text-3xl font-display font-bold text-blue-600 mb-2">5.0</div>
@@ -397,7 +397,7 @@ export default function Home() {
               })}
             </div>
 
-            {/* Email Form */}
+            }
             <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-blue-100/50">
               <h3 className="font-display font-bold text-xl text-gray-900 mb-6">أرسل لي رسالة</h3>
               <form className="space-y-4">
@@ -434,7 +434,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      }
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400 mb-4">© 2026 محمد ناصر علي بغني. جميع الحقوق محفوظة.</p>
