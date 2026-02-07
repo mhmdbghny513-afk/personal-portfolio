@@ -344,21 +344,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="p-6 bg-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl font-display font-bold text-blue-600 mb-2">5.0</div>
-                <p className="text-gray-700 text-sm">متوسط التقييم</p>
-              </Card>
-              <Card className="p-6 bg-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl font-display font-bold text-blue-600 mb-2">5</div>
-                <p className="text-gray-700 text-sm">عدد التوصيات</p>
-              </Card>
-              <Card className="p-6 bg-white border-blue-100/50 text-center hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl font-display font-bold text-blue-600 mb-2">100%</div>
-                <p className="text-gray-700 text-sm">التقييمات الإيجابية</p>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
